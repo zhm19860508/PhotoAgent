@@ -41,7 +41,54 @@
                     
                     NSDictionary *gpsData = [imageData objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
                     
-                    NSLog(@"%@",gpsData);
+                    NSString *alt = [gpsData objectForKey:@"Altitude"];
+                    NSString *latitude = [gpsData objectForKey:@"Latitude"];
+                    NSString *longitude = [gpsData objectForKey:@"Longitude"];
+                    
+                    
+                    
+                    
+                    // NSLog(@"%@",gpsData);
+                    
+                    CLLocationManager *localManager = [[CLLocationManager alloc]init];
+                    [localManager startUpdatingLocation];
+                    
+                    
+                    CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
+                    
+                    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+                    
+                    
+                    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *array, NSError *error)
+                     {
+                         if (array.count > 0)
+                         {
+                             CLPlacemark *placemark = [array objectAtIndex:0];
+                             
+                             //将获得的所有信息显示到label上
+                             NSLog(@"%@",placemark.name);
+                             //获取城市
+                             NSString *city = placemark.locality;
+                             if (!city) {
+                                 //四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
+                                 city = placemark.administrativeArea;
+                             }
+                             NSLog(@"city = %@", city);
+                             
+                         }
+                         else if (error == nil && [array count] == 0)
+                         {
+                             NSLog(@"No results were returned.");
+                         }
+                         else if (error != nil)
+                         {
+                             NSLog(@"An error occurred = %@", error);
+                         }
+                     }];
+                    
+                    [localManager stopUpdatingLocation];
+                    
+                    
                 }else if([assetType isEqualToString:ALAssetTypeVideo]){
                     NSLog(@"Video");
                 }else if([assetType isEqualToString:ALAssetTypeUnknown]){

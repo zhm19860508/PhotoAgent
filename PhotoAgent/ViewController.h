@@ -10,6 +10,9 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <ImageIO/ImageIO.h>
 
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+
 @interface ViewController : UIViewController
 
 
