@@ -109,5 +109,28 @@
 //        NSLog(@"Group not found!\n");
     }];
     
+    
+    // 跳转到ResultViewController
+    // XLIB方式
+//    ResultViewController *resultViewController = [[ResultViewController alloc]initWithNibName:@"ResultViewController" bundle:nil];
+//    [self presentModalViewController:resultViewController animated:YES];
+    [self performSegueWithIdentifier:@"ResultViewController" sender:self];
+    
 }
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    NSDictionary *photoInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"photoCnt", 1,@"addressCnt",20];
+
+    if([NSJSONSerialization isValidJSONObject:photoInfo]){
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:photoInfo options:NSJSONWritingPrettyPrinted error:&error];
+        NSString *json = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+        ResultViewController *send = segue.destinationViewController;
+        [send setValue:json forKey:@"data2"];
+    }
+    
+}
+
 @end

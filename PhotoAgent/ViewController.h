@@ -13,8 +13,10 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController
 
+#import "ResultViewController.h"
+
+@interface ViewController : UIViewController
 
 @end
 

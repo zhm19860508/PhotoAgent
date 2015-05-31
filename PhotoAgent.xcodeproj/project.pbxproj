@@ -18,6 +18,7 @@
 		534D52CF1B16249A00BBAD58 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D52CE1B16249A00BBAD58 /* MapKit.framework */; };
 		53EC95341B135633002DC959 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53EC95331B135633002DC959 /* AssetsLibrary.framework */; };
 		53EC95361B136061002DC959 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53EC95351B136061002DC959 /* ImageIO.framework */; };
+		53F5FAE61B18BFA1007D42FB /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F5FAE51B18BFA1007D42FB /* ResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		534D52CE1B16249A00BBAD58 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		53EC95331B135633002DC959 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		53EC95351B136061002DC959 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		53F5FAE41B18BF73007D42FB /* ResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		53F5FAE51B18BFA1007D42FB /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				5308E05F1B13526800246309 /* Images.xcassets */,
 				5308E0611B13526800246309 /* LaunchScreen.xib */,
 				5308E0521B13526800246309 /* Supporting Files */,
+				53F5FAE41B18BF73007D42FB /* ResultViewController.h */,
+				53F5FAE51B18BFA1007D42FB /* ResultViewController.m */,
 			);
 			path = PhotoAgent;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				5308E05B1B13526800246309 /* ViewController.m in Sources */,
 				5308E0581B13526800246309 /* AppDelegate.m in Sources */,
 				5308E0551B13526800246309 /* main.m in Sources */,
+				53F5FAE61B18BFA1007D42FB /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
